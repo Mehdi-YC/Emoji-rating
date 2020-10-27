@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style2.css">
+    <title>MyRating</title>
+</head>
+
+<body onload="setTimeout(function() {document.getElementById('Merci').style.display = 'none'}, 2000);
+return false">
+    <div class="grid-container">
+
+        <form class="c1" action="{{ url_for('c1') }}" method="post">
+            <button type="submit" style="background-color: transparent; border: none">
+                <img src="../static/svg/1.svg" />
+                </button>
+        </form>
+        <form class="c2" action="{{ url_for('c2') }}" method="post">
+            <button type="submit" style="background-color: transparent; border: none">
+                <img src="../static/svg/2.svg" />
+                </button>
+        </form>
+
+        <form class="c3" action="{{ url_for('c3') }}" method="post">
+            <button type="submit" style="background-color: transparent; border: none">
+                <img src="../static/svg/3.svg" />
+                </button>
+        </form>
+        <form class="c4" action="{{ url_for('c4') }}" method="post">
+            <button type="submit" style="background-color: transparent; border: none">
+                <img src="../static/svg/4.svg" />
+                </button>
+        </form>
+        <form class="c5" action="{{ url_for('c5') }}" method="post">
+
+            <button type="submit" style="background-color: transparent; border: none">
+                <img src="../static/svg/5.svg" />
+                </button>
+        </form>
+
+    </div>
+    <div id="Merci" class="Merci" style="color: {{mycolor}};">
+        <p>Merci !</p>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+</body>
+
+</html>

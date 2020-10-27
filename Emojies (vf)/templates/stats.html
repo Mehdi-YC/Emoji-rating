@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='score.css')}}" />
+    <title>MyRating | Admin</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="t1">{{t1}} %</div>
+        <div class="t2">{{t2}} %</div>
+        <div class="t3">{{t3}} %</div>
+        <div class="t4">{{t4}} %</div>
+
+        <div class="n1">{{n1}}</div>
+        <div class="n2">{{n2}}</div>
+        <div class="n3">{{n3}}</div>
+        <div class="n4">{{n4}}</div>
+
+        <div class="s1">
+            <img src={{url_for('static',filename='svg/2.svg')}} />
+        </div>
+        <div class="s2">
+            <img src={{url_for('static',filename='svg/3.svg')}} />
+        </div>
+        <div class="s3">
+            <img src={{url_for('static',filename='svg/4.svg')}} />
+        </div>
+        <div class="s4">
+            <img src={{url_for('static',filename='svg/5.svg')}} />
+        </div>
+
+        <div class="r">
+            <form action="{{ url_for('admin') }}">
+                <input class="green" type="submit" value="Refresh">
+            </form>
+            <form action="{{ url_for('restore') }}">
+                <input class="red" type="submit" value="DELETE ALL">
+            </form>
+        </div>
+        <div class="t">POURCENTAGE</div>
+        <DIV class="n">nombre de votes</DIV>
+    </div>
+    <br><br><br>
+    <h2>Historique</h2>
+    <div style="align-self: center;align-items:center;font-size: 18px; text-align: center; border: 1px solid black;    border-collapse: collapse;
+    width: 50%;">{{table|safe}}</div>
+
+</body>
+
+</html>

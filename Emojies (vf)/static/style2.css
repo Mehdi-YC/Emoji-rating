@@ -1,0 +1,83 @@
+.grid-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /*align-content: center;*/
+    left:5%;
+    /*margin-left: 20%;*/
+    width:100%;
+    height:60%;
+}
+
+.Merci {
+    bottom:3%;
+    left:40%;
+    position:fixed;
+    font-size: px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(243, 136, 60);
+    text-shadow: black;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height:100%
+
+}
+body{
+    display:flex;
+    flex-direction:column;
+    position: fixed; 
+}
+
+form {
+    align-items: center;
+    align-content: center;
+}
+
+.c1 {
+
+    position: relative;
+
+    height: 100%;
+
+}
+
+.c2 {
+
+    position: relative;
+
+    height: 100%;
+
+}
+
+.c3 {
+    position: relative;
+    height: 100%;
+}
+
+.c4 {
+    position: relative;
+    height: 100%;
+
+}
+
+hr{
+    transform:rotate(90deg);
+      border: 2px solid green;
+}
+.questionfr{
+text-decoration: green overline;
+    text-align:center;
+    font-size:50px;
+}
+
+.questionar{
+     text-decoration: green underline;
+     height:20%;
+    text-align:center;
+    font-size:50px;
+}
