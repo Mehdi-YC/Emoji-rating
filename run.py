@@ -2,7 +2,7 @@ from flask import Flask,render_template
 from tinydb import TinyDB,Query
 import sys
 from datetime import datetime
-from flask_table import Table, Col
+# from flask_table import Table, Col
 
 app = Flask(__name__,template_folder='templates', static_folder="static")
 db = TinyDB('emojies.json')
@@ -10,16 +10,16 @@ db = TinyDB('emojies.json')
 
 
 
-class ItemTable(Table):
-    VOTE = Col('VOTE')
-    TIME = Col('TIME')
-    DATE = Col('DATE')
+# class ItemTable(Table):
+#     VOTE = Col('VOTE')
+#     TIME = Col('TIME')
+#     DATE = Col('DATE')
 
-class Item(object):
-    def __init__(self, VOTE, TIME,DATE):
-        self.VOTE = VOTE
-        self.TIME = TIME
-        self.DATE = DATE
+# class Item(object):
+#     def __init__(self, VOTE, TIME,DATE):
+#         self.VOTE = VOTE
+#         self.TIME = TIME
+#         self.DATE = DATE
 
 @app.route("/")
 def index():
@@ -29,16 +29,16 @@ def index():
 
 @app.route("/c1", methods=['POST'])
 def c1():
-    db.insert({"value":1,
+    db.insert({'value':1,
                 'date':str(datetime.now()).split(' ')[0],
-                "time":str(datetime.now()).split(' ')[1].split('.')[0]})
+                'time':str(datetime.now()).split(' ')[1].split('.')[0]})
     return render_template("test.html",mycolor='#F08080')
 
 
 @app.route("/c2", methods=['POST'])
 def c2():
     db.insert({"value":2,
-                'date':str(datetime.now()).split(' ')[0],
+                "date":str(datetime.now()).split(' ')[0],
                 "time":str(datetime.now()).split(' ')[1].split('.')[0]})
     return render_template("test.html",mycolor='#FFA500')
 
@@ -46,7 +46,7 @@ def c2():
 @app.route("/c3", methods=['POST'])
 def c3():
     db.insert({"value":3,
-                'date':str(datetime.now()).split(' ')[0],
+                "date":str(datetime.now()).split(' ')[0],
                 "time":str(datetime.now()).split(' ')[1].split('.')[0]})
     return render_template("test.html",mycolor='#f7dc15')
 
@@ -54,7 +54,7 @@ def c3():
 @app.route("/c4", methods=['POST'])
 def c4():
     db.insert({"value":4,
-                'date':str(datetime.now()).split(' ')[0],
+                "date":str(datetime.now()).split(' ')[0],
                 "time":str(datetime.now()).split(' ')[1].split('.')[0]})
     return render_template("test.html",mycolor='green')
 
@@ -80,14 +80,14 @@ def admin():
     
     items=[]
     i=0
-    for vote in db:
-        if i<20:
-            items.append(dict(VOTE=vote['value'],DATE=vote['date'],TIME=vote['time']))
-            i+=1
+    # for vote in db:
+    #     if i<20:
+    #         items.append(dict(VOTE=vote['value'],DATE=vote['date'],TIME=vote['time']))
+    #         i+=1
     
-    table = ItemTable(items)
+    # table = ItemTable(items)
 
-    return render_template("stats.html",t1=(t1),t2=(t2),t3=(t3),t4=(t4),n1=int(n1),n2=int(n2),n3=int(n3),n4=int(n4),table=table.__html__())
+    return render_template("stats2.html",t1=(t1),t2=(t2),t3=(t3),t4=(t4),n1=int(n1),n2=int(n2),n3=int(n3),n4=int(n4),data=db.all())
 
 
 @app.route("/admin/restored/")
